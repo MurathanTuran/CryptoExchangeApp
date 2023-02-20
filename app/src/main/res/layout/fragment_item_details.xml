@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/black"
+    android:paddingTop="32dp"
+    android:paddingBottom="32dp"
+    tools:context=".MainFragments.ItemDetailsFragments.ItemDetailsFragment">
+
+
+    <ImageView
+        android:id="@+id/symbolImageItemDetailsFragment"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/cryptoNameTextItemDetailsFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/symbolImageItemDetailsFragment"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="BNB" />
+
+    <TextView
+        android:id="@+id/cryptoPriceTextItemDetailsFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="18dp"
+        android:textColor="#898989"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/symbolImageItemDetailsFragment"
+        app:layout_constraintTop_toBottomOf="@+id/cryptoNameTextItemDetailsFragment"
+        tools:text="$10000" />
+
+    <TextView
+        android:id="@+id/ownCryptoAmountTextItemDetailsFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-100dp"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="0.2" />
+
+    <TextView
+        android:id="@+id/ownCryptoDollarsAmountTextItemDetailsFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:textColor="#898989"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/ownCryptoAmountTextItemDetailsFragment"
+        app:layout_constraintTop_toBottomOf="@+id/ownCryptoAmountTextItemDetailsFragment"
+        tools:text="$2000" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/symbolImageItemDetailsFragment"
+        tools:ignore="MissingConstraints">
+
+        <EditText
+            android:id="@+id/boughtAmountTextItemDetailsFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Bought Amount"
+            android:inputType="number"
+            android:paddingLeft="10dp"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/boughtButtonItemDetailsFragment"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:backgroundTint="@android:color/black"
+            android:textSize="24sp"
+            android:text="Bought"
+            app:cornerRadius="8dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+        tools:ignore="MissingConstraints">
+
+        <EditText
+            android:id="@+id/soldAmountTextItemDetailsFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Sold Amount"
+            android:inputType="number"
+            android:paddingLeft="10dp"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/soldButtonItemDetailsFragment"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:backgroundTint="@android:color/black"
+            android:textSize="24sp"
+            android:text="Sold"
+            app:cornerRadius="8dp" />
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
