@@ -1,16 +1,15 @@
-package com.example.cryptoexchangeapp.MainFragments
+package com.example.cryptoexchangeapp.View.MainFragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.cryptoexchangeapp.databinding.FragmentWalletBinding
+import com.example.cryptoexchangeapp.databinding.FragmentMainBinding
 
+class MainFragment : Fragment() {
 
-class WalletFragment : Fragment() {
-
-    private lateinit var binding: FragmentWalletBinding
+    private lateinit var binding: FragmentMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,7 +21,7 @@ class WalletFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        binding = FragmentWalletBinding.inflate(inflater, container, false)
+        binding = FragmentMainBinding.inflate(inflater, container, false)
         return binding.root
     }
 

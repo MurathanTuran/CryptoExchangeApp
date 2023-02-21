@@ -1,4 +1,4 @@
-package com.example.cryptoexchangeapp.LoginAndRegisterFragments
+package com.example.cryptoexchangeapp.View.LoginAndRegisterFragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,9 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import com.example.cryptoexchangeapp.databinding.FragmentLoginOrRegisterBinding
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
 
 class LoginOrRegisterFragment : Fragment() {
 

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginOrRegisterFragment"
-        android:name="com.example.cryptoexchangeapp.LoginAndRegisterFragments.LoginOrRegisterFragment"
+        android:name="com.example.cryptoexchangeapp.View.LoginAndRegisterFragments.LoginOrRegisterFragment"
         android:label="fragment_login_or_register"
         tools:layout="@layout/fragment_login_or_register" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.cryptoexchangeapp.LoginAndRegisterFragments.LoginFragment"
+        android:name="com.example.cryptoexchangeapp.View.LoginAndRegisterFragments.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.example.cryptoexchangeapp.LoginAndRegisterFragments.RegisterFragment"
+        android:name="com.example.cryptoexchangeapp.View.LoginAndRegisterFragments.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" >
         <action
@@ -37,12 +37,12 @@
     </fragment>
     <fragment
         android:id="@+id/containerFragment"
-        android:name="com.example.cryptoexchangeapp.MainFragments.ContainerFragment"
+        android:name="com.example.cryptoexchangeapp.View.MainFragments.ContainerFragment"
         android:label="fragment_container"
         tools:layout="@layout/fragment_container" />
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.cryptoexchangeapp.MainFragments.MainFragment"
+        android:name="com.example.cryptoexchangeapp.View.MainFragments.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
@@ -51,7 +51,7 @@
     </fragment>
     <fragment
         android:id="@+id/accountFragment"
-        android:name="com.example.cryptoexchangeapp.MainFragments.AccountFragment"
+        android:name="com.example.cryptoexchangeapp.View.MainFragments.AccountFragment"
         android:label="fragment_account"
         tools:layout="@layout/fragment_account" >
         <action
@@ -60,7 +60,7 @@
     </fragment>
     <fragment
         android:id="@+id/walletFragment"
-        android:name="com.example.cryptoexchangeapp.MainFragments.WalletFragment"
+        android:name="com.example.cryptoexchangeapp.View.MainFragments.WalletFragment"
         android:label="fragment_wallet"
         tools:layout="@layout/fragment_wallet" >
         <action
@@ -69,7 +69,7 @@
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.example.cryptoexchangeapp.MainFragments.SettingsFragment"
+        android:name="com.example.cryptoexchangeapp.View.MainFragments.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" >
         <action
@@ -78,7 +78,7 @@
     </fragment>
     <fragment
         android:id="@+id/setPasswordFragment"
-        android:name="com.example.cryptoexchangeapp.MainFragments.SettingsFragments.SetPasswordFragment"
+        android:name="com.example.cryptoexchangeapp.View.MainFragments.SettingsFragments.SetPasswordFragment"
         android:label="fragment_set_password"
         tools:layout="@layout/fragment_set_password" >
         <action
@@ -87,7 +87,7 @@
     </fragment>
     <fragment
         android:id="@+id/itemDetailsFragment"
-        android:name="com.example.cryptoexchangeapp.MainFragments.ItemDetailsFragments.ItemDetailsFragment"
+        android:name="com.example.cryptoexchangeapp.View.MainFragments.ItemDetailsFragments.ItemDetailsFragment"
         android:label="fragment_item_details"
         tools:layout="@layout/fragment_item_details" >
         <action

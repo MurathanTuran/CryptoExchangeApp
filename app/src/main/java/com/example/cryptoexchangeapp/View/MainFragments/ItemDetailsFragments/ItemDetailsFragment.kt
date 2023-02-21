@@ -1,11 +1,10 @@
-package com.example.cryptoexchangeapp.MainFragments.ItemDetailsFragments
+package com.example.cryptoexchangeapp.View.MainFragments.ItemDetailsFragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.cryptoexchangeapp.R
 import com.example.cryptoexchangeapp.databinding.FragmentItemDetailsBinding
 
 class ItemDetailsFragment : Fragment() {

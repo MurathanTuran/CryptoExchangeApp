@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#DEDEDE"
-    tools:context=".LoginAndRegisterFragments.RegisterFragment">
+    tools:context=".View.LoginAndRegisterFragments.RegisterFragment">
 
     <EditText
         android:id="@+id/emailTextRegisterFragment"

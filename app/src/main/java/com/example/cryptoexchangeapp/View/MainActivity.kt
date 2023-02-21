@@ -1,10 +1,9 @@
-package com.example.cryptoexchangeapp
+package com.example.cryptoexchangeapp.View
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.navigation.Navigation
-import com.example.cryptoexchangeapp.LoginAndRegisterFragments.LoginOrRegisterFragmentDirections
-import com.example.cryptoexchangeapp.MainFragments.ContainerFragment
+import com.example.cryptoexchangeapp.View.MainFragments.ContainerFragment
+import com.example.cryptoexchangeapp.R
 import com.example.cryptoexchangeapp.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth

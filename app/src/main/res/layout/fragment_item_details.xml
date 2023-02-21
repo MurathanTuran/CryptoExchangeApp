@@ -7,7 +7,7 @@
     android:background="@android:color/black"
     android:paddingTop="32dp"
     android:paddingBottom="32dp"
-    tools:context=".MainFragments.ItemDetailsFragments.ItemDetailsFragment">
+    tools:context=".View.MainFragments.ItemDetailsFragments.ItemDetailsFragment">
 
 
     <ImageView

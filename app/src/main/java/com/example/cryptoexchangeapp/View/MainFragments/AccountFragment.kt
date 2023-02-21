@@ -1,4 +1,4 @@
-package com.example.cryptoexchangeapp.MainFragments
+package com.example.cryptoexchangeapp.View.MainFragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
