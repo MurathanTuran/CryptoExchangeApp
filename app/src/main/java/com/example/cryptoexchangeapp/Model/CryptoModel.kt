@@ -1,7 +1,7 @@
 package com.example.cryptoexchangeapp.Model
 
 data class CryptoModel(
-    val name: String,
+    val id: String,
     val symbol: String,
     val image: String,
     val current_price: Double

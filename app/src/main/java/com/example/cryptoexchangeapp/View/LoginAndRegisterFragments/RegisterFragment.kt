@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.Navigation
+import com.example.cryptoexchangeapp.Model.CryptoModel
 import com.example.cryptoexchangeapp.databinding.FragmentRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -65,18 +66,20 @@ class RegisterFragment : Fragment() {
         auth.createUserWithEmailAndPassword(email, password).addOnSuccessListener {
             val total = 0
             val wallet = HashMap<String, Long>()
+            val starred = ArrayList<CryptoModel>()
 
-            createCollection(email, total, wallet)
+            createCollection(email, total, wallet, starred)
         }.addOnFailureListener {
             Toast.makeText(requireContext(), it.localizedMessage, Toast.LENGTH_LONG).show()
         }
     }
 
-    private fun createCollection(email: String, total: Int, wallet: HashMap<String, Long>){
+    private fun createCollection(email: String, total: Int, wallet: HashMap<String, Long>, starred: ArrayList<CryptoModel>){
         val userCollection = HashMap<String, Any>()
         userCollection.put("email", email)
         userCollection.put("total", total)
         userCollection.put("wallet", wallet)
+        userCollection.put("starred", starred)
 
         firestore.collection("Users").add(userCollection).addOnSuccessListener {
             Navigation.findNavController(requireView()).navigate(RegisterFragmentDirections.actionRegisterFragmentToContainerFragment())

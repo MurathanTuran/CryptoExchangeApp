@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/black"
+    android:paddingTop="32dp"
+    android:paddingBottom="32dp"
+    tools:context=".View.MainFragments.ItemDetailsFragments.ItemDetailsFragment">
+
+
+    <ImageView
+        android:id="@+id/symbolImageRecyclerRow"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/cryptoSymbolTextRecyclerRow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/symbolImageRecyclerRow"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="BNB" />
+
+
+    <TextView
+        android:id="@+id/cryptoPriceTextRecyclerRow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:textColor="#898989"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/symbolImageRecyclerRow"
+        app:layout_constraintTop_toBottomOf="@+id/cryptoSymbolTextRecyclerRow"
+        tools:text="$10000" />
+
+    <ImageView
+        android:id="@+id/starImageRecyclerRow"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginEnd="16dp"
+        tools:src="@drawable/icon_white_star"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/cryptoIdTextRecyclerRow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:textColor="@color/white"
+        tools:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="205dp"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
