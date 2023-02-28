@@ -1,11 +1,11 @@
 package com.example.cryptoexchangeapp.View.MainFragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cryptoexchangeapp.Service.GetData
@@ -43,21 +43,28 @@ class AccountFragment : Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val layoutManager : RecyclerView.LayoutManager = LinearLayoutManager(requireContext())
+        val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(requireContext())
         binding.recyclerViewAccountFragment.layoutManager = layoutManager
 
         getStarredData()
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+
+        compositeDisposable?.clear()
+    }
+
     private fun getStarredData() {
-        firestore.collection("Users").whereEqualTo("email", email).addSnapshotListener { value, error ->
-            if(error!=null){
-                Toast.makeText(requireContext(), error.toString(), Toast.LENGTH_LONG).show()
-            }
-            else{
-                if(value!=null){
-                    val documentId = value.documents[0].id
-                    firestore.collection("Users").document(documentId).get().addOnSuccessListener {
+        firestore.collection("Users").whereEqualTo("email", email)
+            .addSnapshotListener { value, error ->
+                if (error != null) {
+                    Toast.makeText(requireContext(), error.toString(), Toast.LENGTH_LONG).show()
+                } else {
+                    if (value != null) {
+                        val documentId = value.documents[0].id
+                        firestore.collection("Users").document(documentId).get()
+                            .addOnSuccessListener {
                         val starredArray = it.get("starred") as ArrayList<Any>
                         val ids: String
                         if(starredArray.size != 0){
