@@ -44,29 +44,17 @@
         android:id="@+id/mainFragment"
         android:name="com.example.cryptoexchangeapp.View.MainFragments.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" >
-        <action
-            android:id="@+id/action_mainFragment_to_itemDetailsFragment"
-            app:destination="@id/itemDetailsFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_main" />
     <fragment
         android:id="@+id/accountFragment"
         android:name="com.example.cryptoexchangeapp.View.MainFragments.AccountFragment"
         android:label="fragment_account"
-        tools:layout="@layout/fragment_account" >
-        <action
-            android:id="@+id/action_accountFragment_to_itemDetailsFragment"
-            app:destination="@id/itemDetailsFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_account" />
     <fragment
         android:id="@+id/walletFragment"
         android:name="com.example.cryptoexchangeapp.View.MainFragments.WalletFragment"
         android:label="fragment_wallet"
-        tools:layout="@layout/fragment_wallet" >
-        <action
-            android:id="@+id/action_walletFragment_to_itemDetailsFragment"
-            app:destination="@id/itemDetailsFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_wallet" />
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.example.cryptoexchangeapp.View.MainFragments.SettingsFragment"
@@ -84,14 +72,5 @@
         <action
             android:id="@+id/action_setPasswordFragment_to_settingsFragment"
             app:destination="@id/settingsFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/itemDetailsFragment"
-        android:name="com.example.cryptoexchangeapp.View.MainFragments.ItemDetailsFragments.ItemDetailsFragment"
-        android:label="fragment_item_details"
-        tools:layout="@layout/fragment_item_details" >
-        <action
-            android:id="@+id/action_itemDetailsFragment_to_walletFragment"
-            app:destination="@id/walletFragment" />
     </fragment>
 </navigation>

@@ -1,5 +1,6 @@
 package com.example.cryptoexchangeapp.Service
 
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cryptoexchangeapp.Adapter.RecyclerAdapter
 import com.example.cryptoexchangeapp.Model.CryptoModel
@@ -25,7 +26,10 @@ class GetData(private var compositeDisposable: CompositeDisposable?, private val
         compositeDisposable?.add(retrofit.getData()
             .subscribeOn(io.reactivex.schedulers.Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(this::handleResponseForGetData))
+            .doOnError { throwable -> Toast.makeText(recyclerView.context, throwable.toString(), Toast.LENGTH_LONG).show() }
+            .subscribe(this::handleResponseForGetData) {
+                Toast.makeText(recyclerView.context, it.toString(), Toast.LENGTH_LONG).show()
+            })
     }
 
     fun getData(name: String){
@@ -39,7 +43,10 @@ class GetData(private var compositeDisposable: CompositeDisposable?, private val
         compositeDisposable?.add(retrofit.getData(name)
             .subscribeOn(io.reactivex.schedulers.Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(this::handleResponseForGetData))
+            .doOnError { throwable -> Toast.makeText(recyclerView.context, throwable.toString(), Toast.LENGTH_LONG).show() }
+            .subscribe(this::handleResponseForGetData) {
+                Toast.makeText(recyclerView.context, it.toString(), Toast.LENGTH_LONG).show()
+            })
     }
 
     private fun handleResponseForGetData(cryptoList : List<CryptoModel>?){

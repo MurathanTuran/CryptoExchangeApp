@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/recyclerRow"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@android:color/black"
     android:paddingTop="32dp"
-    android:paddingBottom="32dp"
-    tools:context=".View.MainFragments.ItemDetailsFragments.ItemDetailsFragment">
+    android:paddingBottom="32dp" >
 
 
     <ImageView
@@ -30,7 +31,6 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="BNB" />
 
-
     <TextView
         android:id="@+id/cryptoPriceTextRecyclerRow"
         android:layout_width="wrap_content"
@@ -43,6 +43,31 @@
         app:layout_constraintTop_toBottomOf="@+id/cryptoSymbolTextRecyclerRow"
         tools:text="$10000" />
 
+    <TextView
+        android:id="@+id/cryptoAmountTextRecyclerRow"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-96dp"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="0.2" />
+
+    <TextView
+        android:id="@+id/cryptoTotalTextRecyclerRow"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-96dp"
+        android:layout_marginTop="8dp"
+        android:textColor="#898989"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cryptoAmountTextRecyclerRow"
+        tools:text="$2000" />
+
     <ImageView
         android:id="@+id/starImageRecyclerRow"
         android:layout_width="75dp"
@@ -52,16 +77,85 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <TextView
         android:id="@+id/cryptoIdTextRecyclerRow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="invisible"
         android:textColor="@color/white"
-        tools:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="invisible"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="205dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="208dp"
+        tools:text="TextView" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutBought"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/symbolImageRecyclerRow"
+        tools:ignore="MissingConstraints">
+
+        <EditText
+            android:id="@+id/boughtAmountTextRecyclerRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Bought Amount"
+            android:inputType="number"
+            android:paddingLeft="10dp"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/boughtButtonRecyclerRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:backgroundTint="@android:color/black"
+            android:text="Bought"
+            android:textSize="24sp"
+            app:cornerRadius="8dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutSold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/white"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayoutBought"
+        tools:ignore="MissingConstraints">
+
+        <EditText
+            android:id="@+id/soldAmountTextRecyclerRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Sold Amount"
+            android:inputType="number"
+            android:paddingLeft="10dp"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/soldButtonRecyclerRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:backgroundTint="@android:color/black"
+            android:text="Sold"
+            android:textSize="24sp"
+            app:cornerRadius="8dp" />
+
+    </RelativeLayout>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

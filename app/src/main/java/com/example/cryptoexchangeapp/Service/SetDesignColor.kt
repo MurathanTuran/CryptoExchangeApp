@@ -19,12 +19,24 @@ class SetDesignColor(private val holder: RecyclerAdapter.ViewHolder, private val
     fun blackBg(){
         holder.itemView.setBackgroundColor(ContextCompat.getColor(holder.itemView.context, R.color.black))
         holder.binding.cryptoSymbolTextRecyclerRow.setTextColor(Color.parseColor("#FFFFFF"))
+        holder.binding.cryptoAmountTextRecyclerRow.setTextColor(Color.parseColor("#FFFFFF"))
+        holder.binding.relativeLayoutBought.visibility = View.GONE
+        holder.binding.relativeLayoutSold.visibility = View.GONE
+
+        setDropDownItemsColor(Color.parseColor("#000000"), Color.parseColor("#FFFFFF"))
+
         setStarColor(R.drawable.icon_white_star)
     }
 
     fun whiteBg(){
         holder.itemView.setBackgroundColor(ContextCompat.getColor(holder.itemView.context, R.color.white))
         holder.binding.cryptoSymbolTextRecyclerRow.setTextColor(Color.parseColor("#000000"))
+        holder.binding.cryptoAmountTextRecyclerRow.setTextColor(Color.parseColor("#000000"))
+        holder.binding.relativeLayoutBought.visibility = View.GONE
+        holder.binding.relativeLayoutSold.visibility = View.GONE
+
+        setDropDownItemsColor(Color.parseColor("#FFFFFF"), Color.parseColor("#000000"))
+
         setStarColor(R.drawable.icon_black_star)
     }
 
@@ -40,6 +52,10 @@ class SetDesignColor(private val holder: RecyclerAdapter.ViewHolder, private val
         }
         else if(fragmentName.equals("WalletFragment")){
             holder.binding.starImageRecyclerRow.visibility = View.GONE
+            holder.binding.cryptoAmountTextRecyclerRow.visibility = View.VISIBLE
+            holder.binding.cryptoTotalTextRecyclerRow.visibility = View.VISIBLE
+
+            setWalletData()
         }
         else{
             println("Wrong fragment name")
@@ -60,6 +76,48 @@ class SetDesignColor(private val holder: RecyclerAdapter.ViewHolder, private val
                                 holder.binding.starImageRecyclerRow.setImageResource(R.drawable.icon_starred)
                             }
                         }
+                    }.addOnFailureListener {
+                        Toast.makeText(holder.itemView.context, it.localizedMessage, Toast.LENGTH_LONG).show()
+                    }
+                }
+            }
+        }
+    }
+
+    private fun setDropDownItemsColor(buttonColor: Int, ediTextColor: Int){
+        holder.binding.boughtAmountTextRecyclerRow.setBackgroundColor(ediTextColor)
+        holder.binding.boughtAmountTextRecyclerRow.setTextColor(buttonColor)
+        holder.binding.boughtAmountTextRecyclerRow.setHintTextColor(Color.parseColor("#CCCCCC"))
+
+        holder.binding.soldAmountTextRecyclerRow.setBackgroundColor(ediTextColor)
+        holder.binding.soldAmountTextRecyclerRow.setTextColor(buttonColor)
+        holder.binding.soldAmountTextRecyclerRow.setHintTextColor(Color.parseColor("#CCCCCC"))
+
+        holder.binding.boughtButtonRecyclerRow.setBackgroundColor(buttonColor)
+        holder.binding.boughtButtonRecyclerRow.setTextColor(ediTextColor)
+
+        holder.binding.soldButtonRecyclerRow.setBackgroundColor(buttonColor)
+        holder.binding.soldButtonRecyclerRow.setTextColor(ediTextColor)
+    }
+
+    private fun setWalletData() {
+        firestore.collection("Users").whereEqualTo("email", email).addSnapshotListener { value, error ->
+            if(error!=null){
+                Toast.makeText(holder.itemView.context, error.toString(), Toast.LENGTH_LONG).show()
+            }
+            else{
+                if(value!=null){
+                    val documentId = value.documents[0].id
+                    firestore.collection("Users").document(documentId).get().addOnSuccessListener {
+                        val wallet = it.get("wallet") as HashMap<String, Float>
+                        val cryptoId = holder.binding.cryptoIdTextRecyclerRow.text.toString()
+
+                        val coins = wallet.get(cryptoId).toString().toFloat()
+                        val price = holder.binding.cryptoPriceTextRecyclerRow.text.toString()
+                        val amount = (coins * price.toFloat()).toString()
+
+                        holder.binding.cryptoAmountTextRecyclerRow.text = coins.toString()
+                        holder.binding.cryptoTotalTextRecyclerRow.text = amount
                     }.addOnFailureListener {
                         Toast.makeText(holder.itemView.context, it.localizedMessage, Toast.LENGTH_LONG).show()
                     }

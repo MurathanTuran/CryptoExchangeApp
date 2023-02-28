@@ -64,20 +64,18 @@ class RegisterFragment : Fragment() {
 
     private fun createUser(email: String, password: String){
         auth.createUserWithEmailAndPassword(email, password).addOnSuccessListener {
-            val total = 0
-            val wallet = HashMap<String, Long>()
+            val wallet = HashMap<String, Float>()
             val starred = ArrayList<CryptoModel>()
 
-            createCollection(email, total, wallet, starred)
+            createCollection(email, wallet, starred)
         }.addOnFailureListener {
             Toast.makeText(requireContext(), it.localizedMessage, Toast.LENGTH_LONG).show()
         }
     }
 
-    private fun createCollection(email: String, total: Int, wallet: HashMap<String, Long>, starred: ArrayList<CryptoModel>){
+    private fun createCollection(email: String, wallet: HashMap<String, Float>, starred: ArrayList<CryptoModel>){
         val userCollection = HashMap<String, Any>()
         userCollection.put("email", email)
-        userCollection.put("total", total)
         userCollection.put("wallet", wallet)
         userCollection.put("starred", starred)
 

@@ -15,7 +15,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import io.reactivex.disposables.CompositeDisposable
 
-class AccountFragment : Fragment() {
+class AccountFragment : Fragment(){
 
     private lateinit var binding: FragmentAccountBinding
 
@@ -46,10 +46,10 @@ class AccountFragment : Fragment() {
         val layoutManager : RecyclerView.LayoutManager = LinearLayoutManager(requireContext())
         binding.recyclerViewAccountFragment.layoutManager = layoutManager
 
-        getStarredData()
+        getStarredData(view)
     }
 
-    private fun getStarredData() {
+    private fun getStarredData(view: View) {
         firestore.collection("Users").whereEqualTo("email", email).addSnapshotListener { value, error ->
             if(error!=null){
                 Toast.makeText(requireContext(), error.toString(), Toast.LENGTH_LONG).show()
