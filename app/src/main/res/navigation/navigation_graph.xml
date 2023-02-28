@@ -59,18 +59,10 @@
         android:id="@+id/settingsFragment"
         android:name="com.example.cryptoexchangeapp.View.MainFragments.SettingsFragment"
         android:label="fragment_settings"
-        tools:layout="@layout/fragment_settings" >
-        <action
-            android:id="@+id/action_settingsFragment_to_setPasswordFragment"
-            app:destination="@id/setPasswordFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/setPasswordFragment"
         android:name="com.example.cryptoexchangeapp.View.MainFragments.SettingsFragments.SetPasswordFragment"
         android:label="fragment_set_password"
-        tools:layout="@layout/fragment_set_password" >
-        <action
-            android:id="@+id/action_setPasswordFragment_to_settingsFragment"
-            app:destination="@id/settingsFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_set_password" />
 </navigation>
