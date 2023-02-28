@@ -46,10 +46,10 @@ class AccountFragment : Fragment(){
         val layoutManager : RecyclerView.LayoutManager = LinearLayoutManager(requireContext())
         binding.recyclerViewAccountFragment.layoutManager = layoutManager
 
-        getStarredData(view)
+        getStarredData()
     }
 
-    private fun getStarredData(view: View) {
+    private fun getStarredData() {
         firestore.collection("Users").whereEqualTo("email", email).addSnapshotListener { value, error ->
             if(error!=null){
                 Toast.makeText(requireContext(), error.toString(), Toast.LENGTH_LONG).show()

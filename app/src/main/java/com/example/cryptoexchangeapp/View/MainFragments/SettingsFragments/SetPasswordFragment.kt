@@ -6,14 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.navigation.Navigation
 import com.example.cryptoexchangeapp.R
 import com.example.cryptoexchangeapp.View.MainFragments.SettingsFragment
 import com.example.cryptoexchangeapp.databinding.FragmentSetPasswordBinding
-import com.google.firebase.auth.EmailAuthCredential
 import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 class SetPasswordFragment : Fragment() {
@@ -21,7 +18,6 @@ class SetPasswordFragment : Fragment() {
     private lateinit var binding: FragmentSetPasswordBinding
 
     private var auth = Firebase.auth
-    private var email = auth.currentUser!!.email
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

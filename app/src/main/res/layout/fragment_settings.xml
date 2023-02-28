@@ -8,7 +8,6 @@
     android:orientation="horizontal"
     tools:context=".View.MainFragments.SettingsFragment">
 
-
     <Button
         android:id="@+id/setPasswordButtonSettingsFragment"
         android:layout_width="match_parent"
@@ -21,5 +20,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:cornerRadius="8dp" />
+
+    <Button
+        android:id="@+id/logoutdButtonSettingsFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@android:color/white"
+        android:text="Logout"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/setPasswordButtonSettingsFragment" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

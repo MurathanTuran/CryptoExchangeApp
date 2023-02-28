@@ -30,7 +30,8 @@ class ContainerFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         loadFragment(MainFragment())
-        bottomNavigationClick()
+
+        bottomNavigationClick(view)
 
     }
 
@@ -40,14 +41,14 @@ class ContainerFragment : Fragment() {
         transaction.commit()
     }
 
-    private fun bottomNavigationClick(){
+    private fun bottomNavigationClick(view: View){
         val bottomNav = binding.bottomNavigationViewContainerFragment
         bottomNav.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.main -> { loadFragment(MainFragment()) }
                 R.id.account -> { loadFragment(AccountFragment()) }
                 R.id.wallet -> {loadFragment(WalletFragment()) }
-                R.id.settings -> {loadFragment(SettingsFragment()) }
+                R.id.settings -> { loadFragment(SettingsFragment()) }
             }
             true
         }
